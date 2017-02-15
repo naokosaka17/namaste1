@@ -15,7 +15,7 @@ module.exports = function(express) {
   router.post('/signup', signupController.signup)
 
   router.post('/login', passport.authenticate('local', {
-      successRedirect: '/dashboard',
+      successRedirect: '/mainpage',
       failureRedirect: '/',
       failureFlash: true 
   }))
@@ -24,8 +24,8 @@ module.exports = function(express) {
     res.render('home')
   })
 
-  router.get('/dashboard', isAuthenticated, function(req, res) {
-    res.render('dashboard')
+  router.get('/mainpage', isAuthenticated, function(req, res) {
+    res.render('mainpage')
   })
 
   router.get('/logout', function(req, res) {
