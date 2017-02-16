@@ -28,6 +28,14 @@ module.exports = function(express) {
     res.render('mainpage')
   })
 
+  router.get('/quote', isAuthenticated, function(req, res) {
+    res.render('quote.handlebars')
+  })
+
+  router.get('/calendar', isAuthenticated, function(req, res) {
+    res.render('calendar.handlebars')
+  })
+
   router.get('/logout', function(req, res) {
     req.logout()
     res.redirect('/')

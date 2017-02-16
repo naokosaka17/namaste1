@@ -1,7 +1,7 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  /*background-image: url("images/background.jpeg");*/
 }
 .form-signin {
   max-width: 330px;
@@ -27,4 +27,7 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.login {
+  margin-left: 30%;
 }
