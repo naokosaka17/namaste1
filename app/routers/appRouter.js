@@ -1,5 +1,6 @@
 var passport = require('passport'),
     signupController = require('../controllers/signupController.js')
+var Username = require("../model/User.js");
 
 module.exports = function(express) {
   var router = express.Router()
@@ -34,6 +35,15 @@ module.exports = function(express) {
 
   router.get('/calendar', isAuthenticated, function(req, res) {
     res.render('calendar.handlebars')
+  })
+
+  //almost
+  router.get("/dailyquote", isAuthenticated, function(req, res) {
+    Username.findOne({  
+      username: req.body.username 
+    }).then(function() {
+      res.render('dailyquote.handlebars')
+    });
   })
 
   router.get('/logout', function(req, res) {
