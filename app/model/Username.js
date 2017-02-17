@@ -1,7 +1,8 @@
 var Sequelize = require('sequelize')
+var sequelize = require("../connection.js")
 
-var attributes = {
-    firstname: {
+var Username = sequelize.define("users", {
+        firstname: {
         type: Sequelize.STRING
     },
     lastname: {
@@ -34,11 +35,14 @@ var attributes = {
     salt: {
         type: Sequelize.STRING
     }
-}
 
-var options = {
-  freezeTableName: true
-}
+})
 
-module.exports.attributes = attributes;
-module.exports.options = options;
+
+
+// var options = {
+//   freezeTableName: true
+// }
+
+module.exports = Username;
+// module.exports.options = options;
