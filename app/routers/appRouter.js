@@ -1,6 +1,8 @@
 var passport = require('passport'),
-    signupController = require('../controllers/signupController.js')
-var Username = require("../model/User.js");
+signupController = require('../controllers/signupController.js');
+// var Username = require("../model/User.js");
+// var models = require('../model');
+var Username = require('../model/Username');
 
 module.exports = function(express) {
   var router = express.Router()
@@ -16,9 +18,9 @@ module.exports = function(express) {
   router.post('/signup', signupController.signup)
 
   router.post('/login', passport.authenticate('local', {
-      successRedirect: '/mainpage',
-      failureRedirect: '/',
-      failureFlash: true 
+    successRedirect: '/mainpage',
+    failureRedirect: '/',
+    failureFlash: true 
   }))
 
   router.get('/', function(req, res) {
@@ -34,16 +36,24 @@ module.exports = function(express) {
   })
 
   router.get('/calendar', isAuthenticated, function(req, res) {
-    res.render('calendar.handlebars')
+    res.render('calendar')
   })
 
-  //almost
   router.get("/dailyquote", isAuthenticated, function(req, res) {
-    Username.findOne({  
-      username: req.body.username 
-    }).then(function() {
-      res.render('dailyquote.handlebars')
+    // console.log("req.user", req.user.dataValues.username);
+    Username.findOne({
+      where: {username: req.user.dataValues.username}
+    }).then(function(users){
+      // console.log("users:", users);
+
+      res.render("dailyquote", {username: users.dataValues.username})
     });
+    //{
+
+    //   username: req.body.username 
+    // }).then(function() {
+      // res.end();
+    // });
   })
 
   router.get('/logout', function(req, res) {
