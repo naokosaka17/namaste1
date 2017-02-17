@@ -1,9 +1,7 @@
 var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     bcrypt = require('bcrypt'),
-    // Model = require('./model/models.js')
-    Username = require('./model/Username')
-
+    Model = require('./model/models.js')
 
 module.exports = function(app) {
   app.use(passport.initialize())
@@ -11,7 +9,7 @@ module.exports = function(app) {
 
   passport.use(new LocalStrategy(
     function(username, password, done) {
-      Username.findOne({
+      Model.User.findOne({
         where: {
           'username': username
         }
@@ -36,7 +34,7 @@ module.exports = function(app) {
   })
 
   passport.deserializeUser(function(id, done) {
-    Username.findOne({
+    Model.User.findOne({
       where: {
         'id': id
       }
