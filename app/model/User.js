@@ -7,14 +7,7 @@ var attributes = {
     lastname: {
         type: Sequelize.STRING
     },
-    birthday: {
-        type: Sequelize.INTEGER,
-        allowNull: true
-    },
     emailaddress: {
-        type: Sequelize.STRING,
-    },
-    emailaddress2: {
         type: Sequelize.STRING,
     },
     username: {
@@ -26,9 +19,6 @@ var attributes = {
         }
     },
     password: {
-        type: Sequelize.STRING,
-    },
-    password2: {
         type: Sequelize.STRING,
     },
     salt: {
