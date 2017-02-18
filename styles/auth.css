@@ -81,9 +81,9 @@ body {
   font-family: 'Sansita', sans-serif;
   font-style: italic;
   color: white;
-  padding: 15px 10px;
+  padding: 5px 10px;
   font-size: 20px;
-  margin: 70px 20px 0px 20px;
+  margin: 20px 20px 0px 20px;
 }
 nav {
   background-color: #009688;
@@ -94,8 +94,14 @@ nav {
   margin: 0px 30px 40px 30px;
 }
 
-
-
+pre {
+  margin: 0px;
+  font-family: 'Sansita', sans-serif;
+}
+button {
+  color: white;
+  margin-left: 120px;
+}
 
 
 
