@@ -1,6 +1,6 @@
 var Sequelize = require('sequelize')
-
-var attributes = {
+var sequelize = require("../sequelize.js")
+var Users = sequelize.define("users",{
     firstname: {
         type: Sequelize.STRING
     },
@@ -21,14 +21,17 @@ var attributes = {
     password: {
         type: Sequelize.STRING,
     },
+    password2: {
+        type: Sequelize.STRING,
+    },
     salt: {
         type: Sequelize.STRING
     }
-}
+})
 
-var options = {
-  freezeTableName: true
-}
+// var options = {
+//   freezeTableName: true
+// }
 
-module.exports.attributes = attributes;
-module.exports.options = options;
+module.exports = Users;
+// module.exports.options = options;
