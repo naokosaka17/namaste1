@@ -1,36 +1,70 @@
-   <!-- header--> 
-      <div class="app-topbar"><img id="logo" src="/styles/images/namaste.png" alt="Namaste" style="width:50px;height:50px;">
-        <div class="app-button left" data-back data-autotitle></div>
-        <div class="app-title">Namaste</div>
-         <a id="logout-link" href="/logout">Logout</a>
-      </div>
+ {{#section 'head'}}
+    <link rel="stylesheet" href="/styles/auth.css">
+{{/section}}
+
+<!-- header--> 
+<div class="container">
+  <h1 div class="title center">Namaste</h1>
+
+    
 <!-- personalized salutation -->       
-        <div class="personalized-salutation center">
-          Good <div class="salutation"></div>
-          <div class="first-name"></div>
-          Do you need some extra motivation? <br> How can I inspire you today?
+        <div class="personal-salutation center">
+          Namaste <div class="firstName"></div>
+          How are you feeling today?
         </div>
 <!-- feelings buttons -->
-        <!-- go to page 4 -->
-        <div class="app-section center">
-            <a href="quote" class="waves-effect waves-light btn"><i class="material-icons left">Joy/ Happiness/ Love</i></a>
-          </form>
-            <br><br>
-            <a href="quote" class="waves-effect waves-light btn"><i class="material-icons left">Fear/ Anxiety/ Anger</i></a>
-            <br><br>
-            <a href="quote" class="waves-effect waves-light btn"><i class="material-icons left">Sadness/ Grief/ Defeated</i></a>
-            <br><br>
-            <a href="quote" class="waves-effect waves-light btn"><i class="material-icons left">Loved ones</i></a>
-            <br><br>
-        </div>
-<!-- enter content and save  -->
-        <div class="input-field center">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">A place for your thoughts</label>
-          <a class="waves-effect waves-light btn"><i class="material-icons left">Save your thoughts</i></a>
-        </div>
-<!-- sign up for daily quote notifications -->
-        <!-- go to page 7 -->
-        <div class="input-field center">
-          <a href="dailyquote" class="waves-effect waves-light btn"><i class="material-icons left">Daily Quote Notification</i></a>
-        </div>         
+<div class=emotions>
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <a href="#" class="thumbnail">
+        <img src="./styles/images/kisses.jpg">
+        <img src="./styles/images/laughing.jpg">
+        <img src="./styles/images/excited.jpeg">
+        <img src="./styles/images/perplexed.jpg">
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <a href="#" class="thumbnail">
+        <img src="./styles/images/crying.jpeg">
+        <img src="./styles/images/miserable.jpeg">
+        <img src="./styles/images/yelling.jpeg">
+        <img src="./styles/images/confused.jpeg">
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <a href="#" class="thumbnail">
+        <img src="./styles/images/surprised.jpeg">
+        <img src="./styles/images/pooping.jpeg">
+        <img src="./styles/images/weird.gif">
+        <img src="./styles/images/sick.jpg">
+      </a>
+    </div>
+  </div>
+</div>
+
+ <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+              </a>
+            </li>
+            <li><a href="#">Main</a></li>
+            <li><a href="#">Journal</a></li>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Settings</a></li>
+         <li>
+              <a href="#" aria-label="Next">
+              </a>
+            </li>
+          </ul>
+        </nav>       
+</div>    
+
+
+
+
+
