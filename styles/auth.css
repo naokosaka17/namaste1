@@ -128,10 +128,18 @@ h5{
   color: white;
 }
 
+#logout-link {
+  color: white;
+}
 
-
-
-
+#daily-notice {
+  margin: 80px 20px 0px 20px;
+  
+}
+#noticeText {
+  font-size: 16px;
+  
+}
 
 
 
