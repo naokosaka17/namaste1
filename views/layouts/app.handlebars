@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Namaste</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+      <title>Namaste</title>
+    
+    <!--Materealize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">    
+    <!--Bootstrap Compiled and minified CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"> 
+    <!-- calendar -->
+    <link rel="stylesheet" href="/styles/dhtmlxscheduler.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|New+Rocker|Open+Sans|Sansita" rel="stylesheet">
+    <!-- styles css -->
+    <link rel="stylesheet" href="/styles/app.css">
+    
+    {{{_sections.head}}}
   
-
-  <!--Materealize Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-          
-  <link rel="stylesheet" href="/styles/app.css">
-<!-- calendar -->
-<link rel="stylesheet" href="/styles/dhtmlxscheduler.css">
-  
-  {{{_sections.head}}}
-</head>
-<body >
+  </head>
+  <body >
     {{{body}}}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
     <!-- calendar -->
     <script src="/styles/js/dhtmlxscheduler.js"></script>
     <!-- jQuery -->
@@ -23,8 +34,9 @@
     <!--Materialize Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="codebase/dhtmlxscheduler.js"></script>
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="/styles/customapp.js"></script>
-</body>
+  </body>
 </html>
