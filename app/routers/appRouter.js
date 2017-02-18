@@ -1,6 +1,7 @@
 var passport = require('passport'),
     signupController = require('../controllers/signupController.js')
 var Users = require("../model/User.js");
+var Quotes = require("../model/Quotes.js");
 
 module.exports = function(express) {
   var router = express.Router()
@@ -50,6 +51,42 @@ module.exports = function(express) {
     res.render('settings.handlebars')
   })
 
+  // //get username on quote page
+  // router.get('/quote', isAuthenticated, function(req, res) {
+  //   Users.findOne({
+  //     where: {username: req.user.dataValues.username}
+  //   }).then(function(users){
+  //     res.render("quote", {username: users.dataValues.username})
+  //   })
+  // })
+
+  router.get('/quote', isAuthenticated, function(req, res) {
+    Quotes.findAll({
+    // where: {quote: req.user.dataValues.quote}
+    }).then(function(users){
+    console.log("users:", users[0].dataValues.quote);
+    console.log("author:", users[0].dataValues.author)
+    // console.log("users:", users);
+      res.render('quote', {
+        quote: users[0].dataValues.quote,
+        author: users[0].dataValues.author})
+    });
+  })
+
+  // router.get('/quote', isAuthenticated, function(req, res) {
+  //   Quotes.findAll({
+  //     // where: {quote: req.user.dataValues.quote}
+  //   }).then(function(users){
+  //     console.log("users:", users[0].dataValues.quote);
+  //   //   // console.log("users:", users);
+  //        res.render('quote', {quote: users[0].dataValues.quote})
+  //     });
+  // });
+
+
+
+
+  //get username on dailypage
   router.get("/dailyquote", isAuthenticated, function(req, res) {
     Users.findOne({
       where: {username: req.user.dataValues.username}
