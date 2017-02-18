@@ -29,9 +29,5 @@ var Users = sequelize.define("users",{
     }
 })
 
-// var options = {
-//   freezeTableName: true
-// }
-
+Users.sync();
 module.exports = Users;
-// module.exports.options = options;
