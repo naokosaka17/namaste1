@@ -4,7 +4,6 @@ var Users = require("../model/User.js");
 var Quotes = require("../model/Quotes.js");
 var Journal = require("../model/Journal.js");
 
-
 module.exports = function(express) {
   var router = express.Router()
 
@@ -36,11 +35,6 @@ module.exports = function(express) {
   })
 })
 
-  router.get('/logout', function(req, res) {
-    req.logout()
-    res.redirect('/')
-  })
-
   router.get('/journal', isAuthenticated, function(req, res) {
     res.render('journal.handlebars')
   })
@@ -53,14 +47,13 @@ module.exports = function(express) {
     });
   })
 
-  //post user thoughts on calendar
   router.get('/calendar', isAuthenticated, function(req, res) {
     Journal.findAll({}).then(function(users){
       // console.log("hello2");
       //work 
       //console.log( "users:", users[0].dataValues)
       //work 
-      //console.log( "users:", users[10].dataValues.userthought)
+      console.log( "users:", users[10].dataValues.userthought)
       // res.render("calendar", {
       //   userthought: users.Instance})
     })
