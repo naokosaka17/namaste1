@@ -26,19 +26,28 @@ module.exports = function(express) {
   })
 
   router.get('/mainpage', isAuthenticated, function(req, res) {
-    res.render('mainpage')
+   Users.findOne({
+      where: {username: req.user.dataValues.username}
+    }).then(function(users){
+      res.render("mainpage", {username: users.dataValues.username})
+    })
   })
 
-  router.get('/quote', isAuthenticated, function(req, res) {
-    res.render('quote.handlebars')
+  router.get('/logout', function(req, res) {
+    req.logout()
+    res.redirect('/')
+  })
+
+  router.get('/journal', isAuthenticated, function(req, res) {
+    res.render('journal.handlebars')
   })
 
   router.get('/calendar', isAuthenticated, function(req, res) {
     res.render('calendar.handlebars')
   })
 
-   router.get('/calendar', isAuthenticated, function(req, res) {
-    res.render('calendar')
+  router.get('/settings', isAuthenticated, function(req, res) {
+    res.render('settings.handlebars')
   })
 
   router.get("/dailyquote", isAuthenticated, function(req, res) {
