@@ -87,6 +87,11 @@ body {
 }
 nav {
   background-color: #009688;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
 }
 
 .emotions {
@@ -102,6 +107,46 @@ button {
   color: white;
   margin-left: 120px;
 }
+#thoughts {
+  background-color: white;
+  margin: 90px 20px 50px 20px;
+  padding: 20px 100px 30px 10px;
+}
+ 
+#textarea1 {
+  margin: 30px 80px 50px 20px;
+  padding: 20px 10px 30px 20px;
+  background-color: white;
+}
+#saveBtn {
+  margin: 20px 20px 0px 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
