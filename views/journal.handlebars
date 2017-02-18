@@ -1,34 +1,36 @@
 {{#section 'head'}}
-<link rel="stylesheet" href="/styles/auth.css">
+
+  <link rel="stylesheet" href="/styles/auth.css">
 {{/section}}
 
+<div class="container">
+    <h1 div class="title center">Namaste</h1>
 
-<div class="container center">
-  <h1 div class="title center">Namaste</h1>
 
+<!-- enter content and save  -->
+<div id="thoughts">
+    <div class="input-field" >
+      <form action="/journal/create" method="POST">
+      <textarea id="textarea1" class="materialize-textarea"  type="text" name="userthought" placeholder="A place for your thoughts"></textarea>  
+      <label for="textarea1"></label>   
+    </div>
+  <button id="saveBtn" class="btn btn-lg btn-primary btn-block login" type="submit">Make memories</button>
 
-  <!-- enter content and save  -->
-  <div class="input-field center">
-   <form action="/journal/create" method="POST">
-   <textarea id="textarea1" class="materialize-textarea" type="text" name="userthought"></textarea>
-    <label for="textarea1">A place for your thoughts</label>
-    <button class="waves-effect waves-light btn" type="submit"><i class="material-icons left">Save your thoughts</i></button>
-  </form>
-</div>
-
-<nav aria-label="Page navigation">
-  <ul class="pagination">
-    <li>
-      <a href="#" aria-label="Previous">
-      </a>
-    </li>
-    <li><a href="mainpage">Main</a></li>
-    <li><a href="journal">Journal</a></li>
-    <li><a href="calendar">Calendar</a></li>
-    <li><a href="settings">Settings</a></li>
-    <li>
-      <a href="#" aria-label="Next">
-      </a>
-    </li>
-  </ul>
-</nav>   
+   <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li>
+          <a href="#" aria-label="Previous">
+          </a>
+        </li>
+        <li><a href="mainpage">Main</a></li>
+        <li><a href="quote">Quote</a></li>
+        <li><a href="calendar">Calendar</a></li>
+        <li><a href="settings">Settings</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+          </a>
+        </li>
+      </ul>
+    </nav>   
+</div> 
+</div> 
