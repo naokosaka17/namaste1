@@ -3,32 +3,32 @@
  */
 
 /* Move down content because we have a fixed navbar that is 50px tall */
-body {
+/*body {
   padding-top: 50px;
 }
-
+*/
 /*
  * Global add-ons
  */
 
-.sub-header {
+/*.sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
-}
+}*/
 
 /*
  * Top navigation
  * Hide default border to remove 1px line.
  */
-.navbar-fixed-top {
+/*.navbar-fixed-top {
   border: 0;
 }
-
+*/
 /*
  * Main content
  */
 
-.main {
+/*.main {
   padding: 20px;
 }
 @media (min-width: 768px) {
@@ -40,13 +40,13 @@ body {
 .main .page-header {
   margin-top: 0;
 }
-
+*/
 
 /*
  * Placeholder dashboard ideas
  */
 
-.placeholders {
+/*.placeholders {
   margin-bottom: 30px;
   text-align: center;
 }
@@ -60,3 +60,4 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+*/
