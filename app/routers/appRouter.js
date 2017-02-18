@@ -2,6 +2,8 @@ var passport = require('passport'),
 signupController = require('../controllers/signupController.js')
 var Users = require("../model/User.js");
 var Quotes = require("../model/Quotes.js");
+var Journal = require("../model/Journal.js");
+
 
 module.exports = function(express) {
   var router = express.Router()
@@ -43,8 +45,25 @@ module.exports = function(express) {
     res.render('journal.handlebars')
   })
 
+  //get user thoughts
+  router.post('/journal/create', isAuthenticated, function(req, res) {
+    Journal.create({ userthought: req.body.userthought })
+    .then(function(){
+      res.redirect("/journal")
+    });
+  })
+
+  //post user thoughts on calendar
   router.get('/calendar', isAuthenticated, function(req, res) {
-    res.render('calendar.handlebars')
+    Journal.findAll({}).then(function(users){
+      // console.log("hello2");
+      //work 
+      //console.log( "users:", users[0].dataValues)
+      //work 
+      //console.log( "users:", users[10].dataValues.userthought)
+      // res.render("calendar", {
+      //   userthought: users.Instance})
+    })
   })
 
   router.get('/settings', isAuthenticated, function(req, res) {
@@ -53,6 +72,7 @@ module.exports = function(express) {
 
   //for pick random quote
   var randomNumber = Math.floor(Math.random() * 4);
+  console.log(randomNumber);
 
   //get quote and autor on quote page
   router.get('/quote', isAuthenticated, function(req, res) {

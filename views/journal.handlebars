@@ -1,4 +1,5 @@
 {{#section 'head'}}
+
   <link rel="stylesheet" href="/styles/auth.css">
 {{/section}}
 
@@ -9,7 +10,8 @@
 <!-- enter content and save  -->
 <div id="thoughts">
     <div class="input-field" >
-      <textarea id="textarea1" class="materialize-textarea" placeholder="A place for your thoughts"></textarea>  
+      <form action="/journal/create" method="POST">
+      <textarea id="textarea1" class="materialize-textarea"  type="text" name="userthought" placeholder="A place for your thoughts"></textarea>  
       <label for="textarea1"></label>   
     </div>
   <button id="saveBtn" class="btn btn-lg btn-primary btn-block login" type="submit">Make memories</button>
