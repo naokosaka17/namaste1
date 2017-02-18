@@ -60,12 +60,23 @@ module.exports = function(express) {
   //   })
   // })
 
+
+  function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+
+
+  //get quote and autor on quote page
   router.get('/quote', isAuthenticated, function(req, res) {
     Quotes.findAll({
     // where: {quote: req.user.dataValues.quote}
     }).then(function(users){
-    console.log("users:", users[0].dataValues.quote);
-    console.log("author:", users[0].dataValues.author)
+    console.log("users:", users);
+    console.log("author:", users)
     // console.log("users:", users);
       res.render('quote', {
         quote: users[0].dataValues.quote,
@@ -73,21 +84,8 @@ module.exports = function(express) {
     });
   })
 
-  // router.get('/quote', isAuthenticated, function(req, res) {
-  //   Quotes.findAll({
-  //     // where: {quote: req.user.dataValues.quote}
-  //   }).then(function(users){
-  //     console.log("users:", users[0].dataValues.quote);
-  //   //   // console.log("users:", users);
-  //        res.render('quote', {quote: users[0].dataValues.quote})
-  //     });
-  // });
-
-
-
-
-  //get username on dailypage
-  router.get("/dailyquote", isAuthenticated, function(req, res) {
+  //get username on dailyquote page
+  router.get('/dailyquote', isAuthenticated, function(req, res) {
     Users.findOne({
       where: {username: req.user.dataValues.username}
     }).then(function(users){
