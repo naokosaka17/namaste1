@@ -3,28 +3,32 @@
 {{/section}}
 
 
-<div class="container center">
-  <h1 div class="title center">Namaste</h1>
-  <form method="POST" action="/login" class="form-signin">
-    <h3 class="form-signin-heading">Please log in</h3>
-    
-    {{#if errorMessage}}
-      <div class="alert alert-danger">
-        {{errorMessage}}
-      </div>
-    {{/if}}
-    <div class="input-field">
-      <input placeholder="Username" id="inputUsername" name="username" type="text" class="form-control validate" required>
-      <label for="inputPassword" class="sr-only">User Name</label>
-    </div>
-    <div class="input-field">
-      <input placeholder="Password" id="inputPassword" name="password" type="text" class="form-control validate" required>
-      <label for="inputPassword" class="sr-only">Password</label>
+  <div class="container center">
+    <h1 div class="title center">Namaste</h1>
+    <div class="empowerment-quote">"Here's an amazing quote to make you feel fabulous... BE HAPPY!!"
     </div>
 
-    <button class="btn btn-lg btn-primary btn-block login" type="submit">Log in</button>
-  </form>
-  <form method="get" action="/signup" class="form-signin">
-    <button class="btn waves-effect waves-light" type="submit">Sign up!</button>
-  </form>
-</div>
+    <form method="POST" action="/login" class="form-signin">
+  
+      {{#if errorMessage}}
+        <div class="alert alert-danger">
+          {{errorMessage}}
+        </div>
+      {{/if}}
+      <div class="input-field">
+        <input placeholder="Username" id="inputUsername" name="username" type="text" class="form-control validate" required>
+        <label for="inputPassword" class="sr-only"></label>
+      </div>
+      <div class="input-field">
+        <input placeholder="Password" id="inputPassword" name="password" type="text" class="form-control validate" required>
+        <label for="inputPassword" class="sr-only"></label>
+      </div>
+
+      <button class="btn btn-lg btn-primary btn-block login" type="submit">Log in</button>
+      <a class="waves-effect waves-teal btn-flat">Forgot Username or Password?</a>
+    </form>
+    <form method="get" action="/signup" class="form-signin">
+      <button class="btn waves-effect waves-light" type="submit">Sign up!</button>
+    </form>
+    
+  </div>
